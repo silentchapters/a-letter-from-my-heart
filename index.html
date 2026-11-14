@@ -81,6 +81,17 @@ button {
 button:hover {
   background: #dfc7a2;
 }
+  .navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.navigation button {
+  margin: 0;
+  padding: 10px 20px;
+}
   
 .inside-pages {
   display: grid;
@@ -160,8 +171,31 @@ button:hover {
     </div>
 
   </div>
+  
+ <div id="spread2" class="inside-pages hidden">
+    <div class="letter-page">
+      <p class="message">
+      I'm not asking for 24 hours of your time, baby. I know we both have responsibilities and lives of our own. Nga khlem ong ruh ba phin long available man ki second jong ka sngi.
 
-  <button onclick="closeLetter()">Close the book</button>
+      All I want is your affection and your willingness to make this relationship work. I want to FEEL that I have a place in your life, just as you have a place in mine.
+    </p>
+  </div>
+
+  <div class="letter-page">
+    <p class="message">
+      I'm not a rich man, Mamma, and ioh lehse ngam lah re ban ai everything in this world, but whatever I have, whatever I can do, I want to give it to you with all my heart.
+
+      I want to make you happy, make you feel appreciated, and show you how SPECIAL YOU ARE TO ME. I thanked GOD every day for this.
+    </p>
+  </div>
+
+</div>
+  <div class="navigation">
+  <button onclick="previousSpread()">← Previous</button>
+  <button onclick="nextSpread()">Next →</button>
+</div>
+
+<button onclick="closeLetter()">Close the book</button>
 
 </section>
 </main>
@@ -175,6 +209,15 @@ function openLetter() {
 function closeLetter() {
   document.getElementById("inside").classList.add("hidden");
   document.getElementById("cover").classList.remove("hidden");
+}
+  function nextSpread() {
+  document.querySelector(".inside-pages").classList.add("hidden");
+  document.getElementById("spread2").classList.remove("hidden");
+}
+
+function previousSpread() {
+  document.getElementById("spread2").classList.add("hidden");
+  document.querySelector(".inside-pages").classList.remove("hidden");
 }
 </script>
 
