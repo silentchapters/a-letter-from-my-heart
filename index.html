@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter From My Heart</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #493b32, #9c7958, #594536);
+  font-family: Georgia, serif;
+}
+
+.book {
+  width: min(100%, 650px);
+  min-height: 440px;
+  padding: 45px 30px;
+  text-align: center;
+  color: #72543e;
+  background: #f5ead5;
+  border: 8px double #c3a77d;
+  border-radius: 5px;
+  box-shadow: 0 18px 50px #21170f88;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.small {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+h1 {
+  font-family: "Lucida Handwriting", "Segoe Script", cursive;
+  font-size: clamp(30px, 7vw, 46px);
+  font-weight: normal;
+  margin: 30px 0 20px;
+}
+
+.message {
+  font-family: "Segoe Script", cursive;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+button {
+  margin: 30px auto 0;
+  padding: 12px 28px;
+  border: 1px solid #9b7954;
+  background: #e9d8bb;
+  color: #624831;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #dfc7a2;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<main class="book">
+
+  <section id="cover">
+    <div class="small">A letter written with love</div>
+
+    <h1>A Letter From My Heart</h1>
+
+    <p class="message">
+      For Mamma,<br><br>
+      Some feelings are too important<br>
+      to leave unsaid.
+    </p>
+
+    <button onclick="openLetter()">Open gently ♡</button>
+  </section>
+
+  <section id="inside" class="hidden">
+    <h1>My Dearest Mamma,</h1>
+
+    <p class="message">
+      A little space for words<br>
+      that come straight from my heart.
+    </p>
+
+    <button onclick="closeLetter()">Close the book</button>
+  </section>
+
+</main>
+
+<script>
+function openLetter() {
+  document.getElementById("cover").classList.add("hidden");
+  document.getElementById("inside").classList.remove("hidden");
+}
+
+function closeLetter() {
+  document.getElementById("inside").classList.add("hidden");
+  document.getElementById("cover").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
