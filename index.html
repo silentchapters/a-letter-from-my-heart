@@ -73,6 +73,23 @@ button:hover {
 
 .hidden {
   display: none;
+  .ornament {
+  color: #a58a68;
+  font-size: 30px;
+  margin: 12px 0;
+  opacity: 0.85;
+}
+
+.small {
+  color: #9b8060;
+  letter-spacing: 4px;
+  font-size: 11px;
+}
+
+h1 {
+  color: #72543e;
+  text-shadow: 1px 1px 1px #d8c5a6;
+}
 }
 </style>
 </head>
@@ -82,18 +99,26 @@ button:hover {
 <main class="book">
 
   <section id="cover">
-    <div class="small">A letter written with love</div>
+  <div class="small">A letter written with love</div>
 
-    <h1>A Letter From My Heart</h1>
+  <h1>A Letter From My Heart</h1>
 
-    <p class="message">
-      For Mamma,<br><br>
-      Some feelings are too important<br>
-      to leave unsaid.
-    </p>
+  <div class="ornament">❦</div>
 
-    <button onclick="openLetter()">Open gently ♡</button>
-  </section>
+  <p class="message">
+    For Mamma,<br><br>
+    Some feelings are too important<br>
+    to leave unsaid.
+  </p>
+
+  <div class="ornament">❦</div>
+
+  <p class="message">
+    Open gently · Read whenever you're ready
+  </p>
+
+  <button onclick="openLetter()">Open gently ♡</button>
+</section>
 
   <section id="inside" class="hidden">
     <h1>My Dearest Mamma,</h1>
