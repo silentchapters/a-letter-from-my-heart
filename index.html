@@ -81,7 +81,32 @@ button {
 button:hover {
   background: #dfc7a2;
 }
+  
+.inside-pages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  text-align: left;
+}
 
+.letter-page {
+  padding: 20px;
+  min-height: 400px;
+  background: #f8efdf;
+  border: 1px solid #d8c5a6;
+  box-shadow: 0 3px 10px #72543e22;
+}
+  @media (max-width: 600px) {
+  .inside-pages {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .letter-page {
+    min-height: auto;
+    padding: 18px;
+  }
+}
 .hidden {
   display: none;
 }
@@ -114,17 +139,31 @@ button:hover {
   <button onclick="openLetter()">Open gently ♡</button>
 </section>
 
-  <section id="inside" class="hidden">
-    <h1>My Dearest Mamma,</h1>
+<section id="inside" class="hidden">
 
-    <p class="message">
-      A little space for words<br>
-      that come straight from my heart.
-    </p>
+  <div class="inside-pages">
 
-    <button onclick="closeLetter()">Close the book</button>
-  </section>
+    <div class="letter-page">
+      <h1>My Dearest Mamma,</h1>
 
+      <p class="message">
+        I want you to know that I understand that you've been through things that have hurt you deeply. I may never fully understand how much those experiences affected you, but I don't want you to feel that you have to carry all of that alone.
+      </p>
+    </div>
+
+    <div class="letter-page">
+      <p class="message">
+        I didn't choose you because of what people said about you. Ki briew te phi lah tip hi em kin kren beit, sometimes kin pynduh mysniem ruh lada ki bishni.
+
+        I chose you because I got to know you, because I connected with you, because I saw something beautiful in you, and ha kaba kut my HEART chose YOU baby. Whatever people say about your past, or my past too, they don't get to define who you are or what you deserve..
+      </p>
+    </div>
+
+  </div>
+
+  <button onclick="closeLetter()">Close the book</button>
+
+</section>
 </main>
 
 <script>
