@@ -190,6 +190,25 @@ button:hover {
   </div>
 
 </div>
+  <div id="spread3" class="inside-pages hidden">
+
+  <div class="letter-page">
+    <p class="message">
+      I know you're scared that I might CHANGE or that one day I might leave. But I don't want you to judge our future by what someone else did to you in the past, or by what your friends said about me.
+
+      I'm not asking you to trust me blindly. Let me earn that trust through my actions, consistency and time.
+    </p>
+  </div>
+
+  <div class="letter-page">
+    <p class="message">
+      And if you need time to heal, I'll respect that. I don't want to suffocate you lane pressured ia phi ban ieid ia nga.
+
+      But I also hope you won't shut me out because you're afraid of what might happen.
+    </p>
+  </div>
+
+</div>
   <div class="navigation">
   <button onclick="previousSpread()">← Previous</button>
   <button onclick="nextSpread()">Next →</button>
@@ -210,14 +229,33 @@ function closeLetter() {
   document.getElementById("inside").classList.add("hidden");
   document.getElementById("cover").classList.remove("hidden");
 }
-  function nextSpread() {
-  document.querySelector(".inside-pages").classList.add("hidden");
-  document.getElementById("spread2").classList.remove("hidden");
+  let currentSpread = 1;
+const totalSpreads = 3;
+
+function showSpread(number) {
+  document.querySelectorAll(".inside-pages").forEach(spread => {
+    spread.classList.add("hidden");
+  });
+
+  document.getElementById("spread" + number)?.classList.remove("hidden");
+
+  if (number === 1) {
+    document.querySelector(".inside-pages").classList.remove("hidden");
+  }
+
+  currentSpread = number;
+}
+
+function nextSpread() {
+  if (currentSpread < totalSpreads) {
+    showSpread(currentSpread + 1);
+  }
 }
 
 function previousSpread() {
-  document.getElementById("spread2").classList.add("hidden");
-  document.querySelector(".inside-pages").classList.remove("hidden");
+  if (currentSpread > 1) {
+    showSpread(currentSpread - 1);
+  }
 }
 </script>
 
