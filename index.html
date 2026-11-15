@@ -130,6 +130,27 @@ button:hover {
   vertical-align: middle;
   margin-left: 5px;
 }
+  .closing-verse {
+  font-family: "Segoe Script", cursive;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+  color: #72543e;
+  margin-top: 35px;
+}
+
+.verse-reference {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #9b8060;
+  margin-top: 12px;
+}
+
+.closing-signature {
+  text-align: center;
+  margin-top: 35px;
+}
 </style>
 </head>
 
@@ -259,6 +280,7 @@ button:hover {
   </div>
 
 </div>
+
 <div id="spread6" class="inside-pages hidden">
 
   <div class="letter-page">
@@ -272,14 +294,32 @@ button:hover {
   </div>
 
   <div class="letter-page">
-    <p class="message">
 
-     Love always
-<img src="duh-signature.png" class="signature" alt="Handwritten signature"> ❤
-    </p>
+    <div class="closing-verse">
+      <p>
+        "I will repay you for the years
+        the locusts have eaten."
+      </p>
+
+      <div class="verse-reference">
+        JOEL 2:25
+      </div>
+    </div>
+
+    <div class="closing-signature">
+      <p class="message">With all my love,</p>
+
+      <img src="duh-signature.png"
+           class="signature"
+           alt="Handwritten signature">
+
+      <div class="ornament">♡</div>
+    </div>
+
   </div>
 
 </div>
+
   <div class="navigation">
   <button onclick="previousSpread()">← Previous</button>
   <button onclick="nextSpread()">Next →</button>
@@ -294,6 +334,7 @@ button:hover {
 function openLetter() {
   document.getElementById("cover").classList.add("hidden");
   document.getElementById("inside").classList.remove("hidden");
+  showSpread(1);
 }
 
 function closeLetter() {
