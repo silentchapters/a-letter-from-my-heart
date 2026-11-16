@@ -82,6 +82,10 @@ button {
 button:hover {
   background: #dfc7a2;
 }
+
+.music-button {
+  margin: 12px auto 0;
+}
   .navigation {
   display: flex;
   justify-content: space-between;
@@ -177,6 +181,19 @@ button:hover {
   </p>
 
   <button onclick="openLetter()">Open gently ♡</button>
+    <button
+  class="music-button"
+  type="button"
+  id="musicButton"
+  onclick="toggleMusic()">
+  ♫ Play Music
+</button>
+
+<audio
+  id="letterMusic"
+  src="my-love-is-all-for-you.mp3"
+  preload="none">
+</audio>
 </section>
 
 <section id="inside" class="hidden">
@@ -375,6 +392,28 @@ function previousSpread() {
     showSpread(currentSpread - 1);
   }
 }
+  function toggleMusic() {
+  const music = document.getElementById("letterMusic");
+  const button = document.getElementById("musicButton");
+
+  if (music.paused) {
+    music.play()
+      .then(() => {
+        button.textContent = "♫ Pause Music";
+      })
+      .catch(() => {
+        button.textContent = "♫ Play Music";
+        alert("Unable to play the song. Please check the audio file.");
+      });
+  } else {
+    music.pause();
+    button.textContent = "♫ Play Music";
+  }
+}
+
+document.getElementById("letterMusic").addEventListener("ended", function() {
+  document.getElementById("musicButton").textContent = "♫ Play Music";
+});
 </script>
 
 </body>
