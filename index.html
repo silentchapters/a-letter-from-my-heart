@@ -189,8 +189,22 @@ button:hover {
     Open gently · Read whenever you're ready
   </p>
 
-  <button onclick="openLetter()">Open gently ♡</button>
-    <button
+ 
+<button
+  class="music-button"
+  type="button"
+  id="voiceButton"
+  onclick="toggleVoice()">
+  Listen to me, Mamma ❤️
+</button>
+
+<audio
+  id="myVoice"
+  src="voice.mp3"
+  preload="none">
+</audio>
+
+<button
   class="music-button"
   type="button"
   id="musicButton"
@@ -204,6 +218,9 @@ button:hover {
   preload="none"
   loop>
 </audio>
+
+<button onclick="openLetter()">Open gently ♡</button>
+
 </section>
 
 <section id="inside" class="hidden">
@@ -430,6 +447,29 @@ function previousSpread() {
 
 document.getElementById("letterMusic").addEventListener("ended", function() {
   document.getElementById("musicButton").textContent = "♫ Play Music";
+});
+  function toggleVoice() {
+  const voice = document.getElementById("myVoice");
+  const button = document.getElementById("voiceButton");
+
+  if (voice.paused) {
+    voice.play()
+      .then(() => {
+        button.textContent = "Pause My Voice ♡";
+      })
+      .catch(() => {
+        button.textContent = "Listen to me, Mamma ❤️";
+        alert("Unable to play the voice recording. Please check voice.mp3.");
+      });
+  } else {
+    voice.pause();
+    button.textContent = "Listen to me, Mamma ❤️";
+  }
+}
+
+document.getElementById("myVoice").addEventListener("ended", function() {
+  document.getElementById("voiceButton").textContent =
+    "Listen to me, Mamma ❤️";
 });
 </script>
 
